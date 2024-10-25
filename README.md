@@ -25,9 +25,6 @@ Nguồn dữ liệu được sử dụng cho dự án có sẵn trên Kaggle: [C
    pip install -r requirements.txt
    ```
 
-## Sử dụng
-Dự án có thể được điều khiển thông qua `main.py`, cho phép thực hiện các chức năng chính thông qua menu:
-
 ### Chạy dự án
 ```bash
 python main.py
