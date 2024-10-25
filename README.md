@@ -3,34 +3,7 @@
 ## Mô tả dự án
 Dự án này nhằm xây dựng một hệ thống phát hiện gian lận thẻ tín dụng bằng cách sử dụng các mô hình học máy (Machine Learning) như Logistic Regression và Random Forest. Hệ thống bao gồm các chức năng chính: tiền xử lý dữ liệu, huấn luyện mô hình, đánh giá hiệu suất mô hình và dự đoán trên dữ liệu mới.
 
-Nguồn dữ liệu được sử dụng cho dự án có sẵn trên Kaggle: [Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud).
-
-## Cấu trúc thư mục
-
-```plaintext
-credit_card_fraud_detection/
-│
-├── dataset/
-│   ├── raw/                # Dữ liệu gốc (chưa qua xử lý)
-│   ├── processed/          # Dữ liệu đã qua xử lý
-│   ├── new_data/           # Dữ liệu mới cần dự đoán
-│
-├── src/                    # Thư mục chứa mã nguồn Python
-│   ├── data_preprocessing.py  # Xử lý và tiền xử lý dữ liệu
-│   ├── model_training.py      # Huấn luyện mô hình
-│   ├── model_evaluation.py    # Đánh giá mô hình
-│   ├── model_inference.py     # Dự đoán với dữ liệu mới
-│   ├── generate_random_data.py # Tạo dữ liệu mẫu ngẫu nhiên từ tập dữ liệu gốc
-│
-├── models/                 # Lưu trữ các mô hình đã huấn luyện
-│   ├── logistic_model.pkl    # Mô hình Logistic Regression
-│   ├── random_forest_model.pkl # Mô hình Random Forest
-│   ├── preprocessor.pkl       # Bộ tiền xử lý dữ liệu
-│
-├── requirements.txt        # Danh sách các thư viện Python cần thiết
-├── README.md               # Tài liệu dự án
-└── main.py                 # Tệp chính để chạy dự án
-```
+Nguồn dữ liệu được sử dụng cho dự án có sẵn trên Kaggle: [Credit Card Fraud Detection](https://www.kaggle.com/datasets/bhadramohit/credit-card-fraud-detection).
 
 ## Hướng dẫn cài đặt
 
@@ -76,7 +49,7 @@ python main.py
 6. **Exit**: Thoát chương trình.
 
 ## Tham khảo
-- Nguồn dữ liệu: [Credit Card Fraud Detection on Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+- Nguồn dữ liệu: [Credit Card Fraud Detection on Kaggle](https://www.kaggle.com/datasets/bhadramohit/credit-card-fraud-detection)
 - Các mô hình và thuật toán: Logistic Regression, Random Forest
 - Các kỹ thuật xử lý dữ liệu mất cân bằng: `class_weight='balanced'`, phân tích và điều chỉnh mô hình cho dữ liệu bất cân đối.
 
