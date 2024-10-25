@@ -37,11 +37,11 @@ python main.py
 
 3. **Evaluate Model**: Đánh giá hiệu suất của mô hình trên tập kiểm tra, bao gồm các chỉ số: Accuracy, Precision, Recall, F1-Score, ROC AUC, và ma trận nhầm lẫn.
 
-4. **Make Inference on New Data**: Dự đoán trên dữ liệu mới trong thư mục `dataset/new_data/`. Kết quả dự đoán sẽ được lưu vào `predictions.csv` trong cùng thư mục.
-
-5. **Generate Random Data for Inference**: 
+4. **Generate Random Data for Inference**: 
    - Sử dụng `generate_random_data.py` trong `src/` để tạo dữ liệu mẫu ngẫu nhiên từ dữ liệu gốc.
    - Tệp dữ liệu mẫu (`new_transactions.csv`) sẽ được lưu trong thư mục `dataset/new_data/` để dùng cho suy luận.
+
+5. **Make Inference on New Data**: Dự đoán trên dữ liệu mới trong thư mục `dataset/new_data/`. Kết quả dự đoán sẽ được lưu vào `predictions.csv` trong cùng thư mục.
 
 6. **Exit**: Thoát chương trình.
 
