@@ -38,14 +38,14 @@ logistic_model = LogisticRegression(random_state=42, max_iter=1000, class_weight
 random_forest_model = RandomForestClassifier(random_state=42, n_estimators=100, class_weight='balanced')
 
 # Train Logistic Regression model
-print("Training Logistic Regression...")
+print("\nTraining Logistic Regression...")
 logistic_model.fit(X_train, y_train)
 y_pred_logistic = logistic_model.predict(X_test)
 
 # Evaluate Logistic Regression model
 accuracy_logistic = accuracy_score(y_test, y_pred_logistic)
 roc_auc_logistic = roc_auc_score(y_test, y_pred_logistic)
-print("\nLogistic Regression Model Performance:")
+print("Logistic Regression Model Performance:")
 print(f"Accuracy: {accuracy_logistic}")
 print(f"ROC AUC: {roc_auc_logistic}")
 print("Classification Report:\n", classification_report(y_test, y_pred_logistic))
@@ -61,7 +61,7 @@ y_pred_rf = random_forest_model.predict(X_test)
 # Evaluate Random Forest model
 accuracy_rf = accuracy_score(y_test, y_pred_rf)
 roc_auc_rf = roc_auc_score(y_test, y_pred_rf)
-print("\nRandom Forest Model Performance:")
+print("Random Forest Model Performance:")
 print(f"Accuracy: {accuracy_rf}")
 print(f"ROC AUC: {roc_auc_rf}")
 print("Classification Report:\n", classification_report(y_test, y_pred_rf))

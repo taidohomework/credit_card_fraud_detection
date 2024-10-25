@@ -17,16 +17,16 @@ Lưu kết quả:
 
 Lưu kết quả dự đoán vào tệp CSV predictions.csv trong thư mục dataset/new_data/.
 '''
-
 import pandas as pd
 import joblib
 
-# Load the pre-trained model and preprocessor
-model = joblib.load('models/random_forest_model.pkl')  # Choose either logistic_model.pkl or random_forest_model.pkl
+# Load the pre-trained models and preprocessor
+logistic_model = joblib.load('models/logistic_model.pkl')
+random_forest_model = joblib.load('models/random_forest_model.pkl')
 preprocessor = joblib.load('models/preprocessor.pkl')
 
 # Load new data
-new_data_path = 'dataset/new_data/new_transactions.csv'  # Update this path if necessary
+new_data_path = 'dataset/new_data/new_transactions.csv'
 new_data = pd.read_csv(new_data_path)
 
 # Preprocess new data
@@ -39,15 +39,25 @@ new_data = new_data.drop(columns=['TransactionID', 'TransactionDate', 'MerchantI
 # Transform new data using the saved preprocessor
 X_new = preprocessor.transform(new_data)
 
-# Perform inference
-predictions = model.predict(X_new)
-prediction_probabilities = model.predict_proba(X_new)[:, 1]  # Probability of being fraud
+def make_predictions(model, model_name):
+    # Perform inference
+    predictions = model.predict(X_new)
+    prediction_probabilities = model.predict_proba(X_new)[:, 1]  # Probability of being fraud
 
-# Prepare results
-new_data['IsFraudPrediction'] = predictions
-new_data['FraudProbability'] = prediction_probabilities
+    # Prepare results
+    results = new_data.copy()
+    results['IsFraudPrediction'] = predictions
+    results['FraudProbability'] = prediction_probabilities
 
-# Save results to a CSV file
-output_path = 'dataset/new_data/predictions.csv'
-new_data.to_csv(output_path, index=False)
-print(f"Predictions saved to {output_path}")
+    # Remove unwanted columns
+    columns_to_remove = ['IsFraud', 'Day', 'Month', 'Hour']
+    results = results.drop(columns=columns_to_remove, errors='ignore')
+
+    # Save results to a CSV file
+    output_path = f'dataset/new_data/predictions_{model_name}.csv'
+    results.to_csv(output_path, index=False)
+    print(f"Predictions for {model_name} saved to {output_path}")
+
+# Make predictions for both models
+make_predictions(logistic_model, "logistic_regression")
+make_predictions(random_forest_model, "random_forest")
