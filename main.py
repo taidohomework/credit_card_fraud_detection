@@ -1,5 +1,4 @@
 import os
-import pandas as pd
 
 def preprocess_data():
     print("Starting data preprocessing...")
