@@ -43,7 +43,9 @@ python main.py
 
 5. **Make Inference on New Data**: Dự đoán trên dữ liệu mới trong thư mục `dataset/new_data/`. Kết quả dự đoán sẽ được lưu vào `predictions.csv` trong cùng thư mục.
 
-6. **Exit**: Thoát chương trình.
+6. **Show Fraud Statistics**: Hiển thị thông tin thống kê và trực quan hóa về các mẫu gian lận.
+
+7. **Exit**: Thoát chương trình.
 
 ## Tham khảo
 - Nguồn dữ liệu: [Credit Card Fraud Detection on Kaggle](https://www.kaggle.com/datasets/bhadramohit/credit-card-fraud-detection)
