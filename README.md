@@ -35,7 +35,7 @@ python main.py
 
 2. **Train Model**: Huấn luyện mô hình Logistic Regression và Random Forest trên dữ liệu đã tiền xử lý. Các mô hình sẽ được lưu trong thư mục `models/`.
 
-3. **Evaluate Model**: Đánh giá hiệu suất của mô hình trên tập kiểm tra, bao gồm các chỉ số: Accuracy, Precision, Recall, F1-Score, ROC AUC, và ma trận nhầm lẫn.
+3. **Evaluate Model**: Đánh giá hiệu suất của mô hình trên tập kiểm tra, bao gồm các chỉ số: Accuracy, Precision, Recall, F1-Score, ROC AUC, và Confusion Matrix, Outlier Detection, ROC Curve.
 
 4. **Generate Random Data for Inference**: 
    - Sử dụng `generate_random_data.py` trong `src/` để tạo dữ liệu mẫu ngẫu nhiên từ dữ liệu gốc.
